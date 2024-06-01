@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link rel="stylesheet" href="Cart.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left"><a href="index.html">eStore</a></div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Store.html">Store</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <button class="hamburger">
+                <div class="bar"></div>
+            </button>
+        </nav>
+    </header>
+    <div class="mobnav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Store.html">Store</a></li>
+            <li><a href="Cart.html">Cart</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <main>
+        <div class="container">
+            <h2>My Cart</h2>
+            <div id="cart-items"></div>
+            <div id="total-amount">Total: Rs. 0</div>
+            <button class="btn">Check Out</button>
+        </div>
+        <div class="payment">
+            <h1 class="payTitle">Personal Information</h1>
+            <label for="" class="label">Name <br></label>
+            <input type="text" class="payInput">
+            <label for="" class="label"><br>Phone Number <br></label>
+            <input type="number" class="payInput">
+            <label for="" class="label"><br>Address <br></label>
+            <input type="text" class="payInput"> <br>
+            <h1 class="cardTitle">Card Details</h1>
+            <div class="paycards">
+                <img src="imgs/visa.png" alt="">
+                <img src="imgs/mastercard.png" alt="">
+            </div>
+            <input type="password" class="payInput" placeholder="Card Number">
+            <div class="cardInfo">
+                <input type="text" placeholder="mm" class="payInput sm">
+                <input type="text" placeholder="yyyy" class="payInput sm">
+                <input type="text" placeholder="cvv" class="payInput sm">
+            </div>
+            <button class="payBtn">Checkout!</button>
+            <span class="close">X</span>
+        </div>
+    </main>
+    <script src="Cart.js"></script>
+</body>
+</html>

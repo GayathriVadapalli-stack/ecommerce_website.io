@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thankyou</title>
+</head>
+<style>
+    html {
+        background-color: aliceblue;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 50px;
+        flex-direction: column;
+        margin-top: 200px;
+    }
+
+    .btn {
+        background-color: #121010;
+        font-size: 15px;
+        padding: 6px 18px;
+        border: 2px solid black;
+        border-radius: 15px;
+        color: aliceblue;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 480px) {
+        .container {
+            font-size: 30px;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <p>Your order has been placed successfully. <br>Thank You.</p>
+        <button class="btn">Go back to Home</button>
+    </div>
+    <script>
+        const btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

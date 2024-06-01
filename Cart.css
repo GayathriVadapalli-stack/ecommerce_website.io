@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: medium;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: aliceblue;
+    /* background-color: black; */
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    z-index: 10;
+}
+
+nav {
+    background-color: rgb(7, 7, 60);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .left a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 45px;
+    position: relative;
+    left: -5vw;
+}
+
+nav .left {
+    margin: 7px 0px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 1.5rem 2.5rem;
+    transition: border-bottom 1s ease-in-out;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 25px;
+    margin: 1vw;
+}
+
+nav ul li :hover {
+    color: rgb(244, 237, 227);
+    border-bottom: 2px solid white;
+}
+
+.hamburger {
+    position: relative;
+    display: none;
+    width: 35px;
+    cursor: pointer;
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.hamburger .bar, .hamburger::before, .hamburger::after {
+    content: '';
+    display: none;
+    width: 100%;
+    height: 5px;
+    background-color: aliceblue;
+    border-radius: 2px;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.hamburger.is-active::before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active::after {
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+    opacity: 0;
+}
+
+.mobnav {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    z-index: 9;
+    background-color: rgb(14, 14, 82);
+    padding-top: 120px;
+    transition: 0.4s;
+}
+
+.mobnav.is-active {
+    left: 0;
+}
+
+.mobnav a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    padding: 12px 16px;
+    background-color: rgb(23, 23, 106);
+
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.mobnav a :hover {
+    background-color: rgb(17, 17, 117);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.cart-item img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.cart-item div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.cart-item p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.cart-item .increase,
+.cart-item .decrease {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.cart-item .increase:hover,
+.cart-item .decrease:hover {
+    background-color: #0056b3;
+}
+
+#total-amount {
+    text-align: right;
+    font-size: 20px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.btn {
+    background-color: black;
+    font-size: 15px;
+    padding: 6px 18px;
+    border: 2px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+.payment {
+    z-index: 100;
+    width: 500px;
+    height: 550px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px 50px;
+    display: none;
+}
+
+.payTitle {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.label {
+    font-size: 25px;
+}
+
+.payInput{
+    width: 450px;
+    border: none;
+    border-bottom: 2px solid gray;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.cardTitle {
+    margin: 15px 0;
+}
+
+.paycards img {
+    height: 35px;
+}
+
+.cardInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sm {
+    width: 25%;
+}
+
+.payBtn {
+    position: absolute;
+    height: 40px;
+    bottom: -40px;
+    width: 100%;
+    left: 0;
+    background-color: rgb(11, 137, 11);
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: red;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 480px) {
+    nav .right {
+        display: none;
+    }  
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger .bar, .hamburger::before, .hamburger::after {
+        display: block;
+    }
+
+    .payment {
+        width: 60vw;
+        height: 600px;
+    }
+
+    .payment h1 {
+        font-size: 25px;
+    }
+
+    .label {
+        font-size: 20px;
+    }
+
+    .payInput {
+        width: 55vw;
+        margin: none;
+    }
+
+    .sm {
+        width: 20%;
+    }
+}
