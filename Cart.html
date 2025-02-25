@@ -39,25 +39,27 @@
             <button class="btn">Check Out</button>
         </div>
         <div class="payment">
-            <h1 class="payTitle">Personal Information</h1>
-            <label for="" class="label">Name <br></label>
-            <input type="text" class="payInput">
-            <label for="" class="label"><br>Phone Number <br></label>
-            <input type="number" class="payInput">
-            <label for="" class="label"><br>Address <br></label>
-            <input type="text" class="payInput"> <br>
-            <h1 class="cardTitle">Card Details</h1>
-            <div class="paycards">
-                <img src="imgs/visa.png" alt="">
-                <img src="imgs/mastercard.png" alt="">
-            </div>
-            <input type="password" class="payInput" placeholder="Card Number">
-            <div class="cardInfo">
-                <input type="text" placeholder="mm" class="payInput sm">
-                <input type="text" placeholder="yyyy" class="payInput sm">
-                <input type="text" placeholder="cvv" class="payInput sm">
-            </div>
-            <button class="payBtn">Checkout!</button>
+            <form id="paymentForm" onsubmit="return validateForm(event)">
+                <h1 class="payTitle">Personal Information</h1>
+                <label for="name" class="label">Name <br></label>
+                <input type="text" id="name" class="payInput" required>
+                <label for="phone" class="label"><br>Phone Number <br></label>
+                <input type="number" id="phone" class="payInput" required>
+                <label for="address" class="label"><br>Address <br></label>
+                <input type="text" id="address" class="payInput" required> <br>
+                <h1 class="cardTitle">Card Details</h1>
+                <div class="paycards">
+                    <img src="imgs/visa.png" alt="">
+                    <img src="imgs/mastercard.png" alt="">
+                </div>
+                <input type="password" id="cardNumber" class="payInput" placeholder="Card Number" required>
+                <div class="cardInfo">
+                    <input type="text" placeholder="mm" id="month" class="payInput sm" required>
+                    <input type="text" placeholder="yyyy" id="year" class="payInput sm" required>
+                    <input type="text" placeholder="cvv" id="cvv" class="payInput sm" required>
+                </div>
+                <button type="submit" class="payBtn">Check Out</button>
+            </form>
             <span class="close">X</span>
         </div>
     </main>
